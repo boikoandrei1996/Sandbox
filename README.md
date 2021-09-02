@@ -6,9 +6,9 @@
 - Commands list
 - Contacts information
 - Survey
-    -- Single-option answer
-    -- Manual-option answer
-    -- User input answer
+    - Single-option answer
+    - Manual-option answer
+    - User input answer
 - Catalog
     -- Category
     -- Items
