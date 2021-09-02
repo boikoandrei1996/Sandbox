@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.CLI", "src\Sandbox.CLI\Sandbox.CLI.csproj", "{47EB4B3F-A1B2-4640-ADA3-289C612176F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.SourceGenerator", "src\Sandbox.SourceGenerator\Sandbox.SourceGenerator.csproj", "{7A67706C-F8A2-4DA2-BD80-BE331ADCD119}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.Benchmarks", "src\Sandbox.Benchmarks\Sandbox.Benchmarks.csproj", "{B4B4E882-03F3-4E4B-8065-A613979F90F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.TelegramBot.Polling", "src\Sandbox.TelegramBot.Polling\Sandbox.TelegramBot.Polling.csproj", "{B2E72BD6-2EB1-4B18-B0D9-B06223A21E7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.TelegramBot.Core", "src\Sandbox.TelegramBot.Core\Sandbox.TelegramBot.Core.csproj", "{F6BD9DAD-44F6-42AC-8524-7C10CBEB67AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox.TelegramBot.Webhook", "src\Sandbox.TelegramBot.Webhook\Sandbox.TelegramBot.Webhook.csproj", "{0CBD2728-D960-4EFC-8977-2636E16BE4AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{1886AF6B-A661-406F-96ED-1ACD31FFC71D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TelegramBot", "TelegramBot", "{3415BB23-3CCD-4075-8875-B855A475D326}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47EB4B3F-A1B2-4640-ADA3-289C612176F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47EB4B3F-A1B2-4640-ADA3-289C612176F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47EB4B3F-A1B2-4640-ADA3-289C612176F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47EB4B3F-A1B2-4640-ADA3-289C612176F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A67706C-F8A2-4DA2-BD80-BE331ADCD119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A67706C-F8A2-4DA2-BD80-BE331ADCD119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A67706C-F8A2-4DA2-BD80-BE331ADCD119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A67706C-F8A2-4DA2-BD80-BE331ADCD119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B4E882-03F3-4E4B-8065-A613979F90F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B4E882-03F3-4E4B-8065-A613979F90F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B4E882-03F3-4E4B-8065-A613979F90F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B4E882-03F3-4E4B-8065-A613979F90F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E72BD6-2EB1-4B18-B0D9-B06223A21E7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E72BD6-2EB1-4B18-B0D9-B06223A21E7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E72BD6-2EB1-4B18-B0D9-B06223A21E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E72BD6-2EB1-4B18-B0D9-B06223A21E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6BD9DAD-44F6-42AC-8524-7C10CBEB67AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BD9DAD-44F6-42AC-8524-7C10CBEB67AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BD9DAD-44F6-42AC-8524-7C10CBEB67AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BD9DAD-44F6-42AC-8524-7C10CBEB67AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CBD2728-D960-4EFC-8977-2636E16BE4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CBD2728-D960-4EFC-8977-2636E16BE4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CBD2728-D960-4EFC-8977-2636E16BE4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CBD2728-D960-4EFC-8977-2636E16BE4AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47EB4B3F-A1B2-4640-ADA3-289C612176F7} = {1886AF6B-A661-406F-96ED-1ACD31FFC71D}
+		{7A67706C-F8A2-4DA2-BD80-BE331ADCD119} = {1886AF6B-A661-406F-96ED-1ACD31FFC71D}
+		{B4B4E882-03F3-4E4B-8065-A613979F90F0} = {1886AF6B-A661-406F-96ED-1ACD31FFC71D}
+		{B2E72BD6-2EB1-4B18-B0D9-B06223A21E7E} = {3415BB23-3CCD-4075-8875-B855A475D326}
+		{F6BD9DAD-44F6-42AC-8524-7C10CBEB67AE} = {3415BB23-3CCD-4075-8875-B855A475D326}
+		{0CBD2728-D960-4EFC-8977-2636E16BE4AE} = {3415BB23-3CCD-4075-8875-B855A475D326}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {309A5A2E-7E1E-42B4-9CB1-CF02FB22D5AE}
+	EndGlobalSection
+EndGlobal

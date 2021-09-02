@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:5.0.2
+    container_name: bluecoin-db
+    networks:
+      - bluecoin
+    ports:
+      - 27017:27017
+    volumes:
+      - C:\data\bluecoin\mongo-db:/data/db
+
+  # https://github.com/bitnami/bitnami-docker-redis
+  redis:
+    image: bitnami/redis:6.2
+    container_name: bluecoin-cache
+    networks:
+      - bluecoin
+    ports:
+      - 6379:6379
+    environment:
+      - REDIS_PASSWORD=pass1234
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    volumes:
+      - C:\data\bluecoin\redis-cache:/bitnami/redis/data
+
+networks:
+  bluecoin:
+    name: bluecoin-network

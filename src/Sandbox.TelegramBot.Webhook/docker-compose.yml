@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:5.0.2
+    container_name: bluecoin-db
+    networks:
+      - bluecoin
+    ports:
+      - 27017:27017
+    #environment:
+    #  - MONGO_INITDB_ROOT_USERNAME=root
+    #  - MONGO_INITDB_ROOT_PASSWORD=pass1234
+    volumes:
+      - C:\data\bluecoin\mongo-db:/data/db
+
+  # https://github.com/bitnami/bitnami-docker-redis
+  redis:
+    image: bitnami/redis:6.2
+    container_name: bluecoin-cache
+    networks:
+      - bluecoin
+    ports:
+      - 6379:6379
+    environment:
+      - REDIS_PASSWORD=pass1234
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    volumes:
+      - C:\data\bluecoin\redis-cache:/bitnami/redis/data
+
+  #bot_webhook:
+  #  container_name: bluecoin-bot-webhook
+  #  build:
+  #    context: ../
+  #    dockerfile: Sandbox.TelegramBot.Webhook/Dockerfile
+  #  depends_on:
+  #    - mongo
+  #    - redis
+  #  networks:
+  #    - bluecoin
+  #  ports:
+  #    - 8443:80
+  #  environment:
+  #    - ASPNETCORE_ENVIRONMENT=Development
+  #  links:
+  #    - mongo
+  #    - redis
+
+networks:
+  bluecoin:
+    name: bluecoin-network
