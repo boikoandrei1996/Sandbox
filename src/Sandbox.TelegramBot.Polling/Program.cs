@@ -14,8 +14,6 @@ using Telegram.Bot.Types;
 
 namespace Sandbox.TelegramBot.Polling
 {
-    // TODO: fill in data and survey steps
-    // TODO: deploy by the new instance of bot
     class Program
     {
         static async Task Main(string[] args)

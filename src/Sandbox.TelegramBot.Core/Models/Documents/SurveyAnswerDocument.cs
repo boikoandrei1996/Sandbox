@@ -37,7 +37,22 @@ namespace Sandbox.TelegramBot.Core.Models.Documents
                         result.Answers.Add(key.ToString(), answer);
                     }
                 }
-                else if (key == SurveyState.RequestName || key == SurveyState.RequestEmail)
+                else if (key == SurveyState.Question3)
+                {
+                    result.Answers.Add(key.ToString(), answer);
+                }
+                else if (key == SurveyState.Question4)
+                {
+                    if (surveyForm.Answers.TryGetValue(SurveyState.RequestDetailsQuestion4, out var answerDetails))
+                    {
+                        result.Answers.Add(key.ToString(), $"{answer} ({answerDetails})");
+                    }
+                    else
+                    {
+                        result.Answers.Add(key.ToString(), answer);
+                    }
+                }
+                else if (key == SurveyState.RequestName || key == SurveyState.RequestEmail || key == SurveyState.RequestPhone)
                 {
                     result.Answers.Add(key.ToString(), answer);
                 }

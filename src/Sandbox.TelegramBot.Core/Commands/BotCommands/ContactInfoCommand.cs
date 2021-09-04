@@ -33,6 +33,12 @@ namespace Sandbox.TelegramBot.Core.Commands.BotCommands
 
             await botClient.SendTextMessageAsync(
                 message.Chat,
+                "Или так",
+                cancellationToken: cancellationToken
+            );
+
+            await botClient.SendTextMessageAsync(
+                message.Chat,
                 "Наши контакты",
                 replyMarkup: new InlineKeyboardMarkup(BuildButtons()),
                 cancellationToken: cancellationToken

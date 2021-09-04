@@ -42,10 +42,14 @@ namespace Sandbox.TelegramBot.Core.Services
                 SurveyState.None => HandleSurveyFinish(botClient, message, surveyForm, cancellationToken),
                 SurveyState.Question1 => HandleSurveyQuestionAsk(botClient, message, SurveyQuestionType.Question1, cancellationToken),
                 SurveyState.Question2 => HandleSurveyQuestionAsk(botClient, message, SurveyQuestionType.Question2, cancellationToken),
+                SurveyState.Question3 => HandleSurveyQuestionAsk(botClient, message, SurveyQuestionType.Question3, cancellationToken),
+                SurveyState.Question4 => HandleSurveyQuestionAsk(botClient, message, SurveyQuestionType.Question4, cancellationToken),
                 SurveyState.RequestDetailsQuestion1 => HandleSurveyInputRequest(botClient, message, RequestInputType.RequestDetailsQuestion1, cancellationToken),
                 SurveyState.RequestDetailsQuestion2 => HandleSurveyInputRequest(botClient, message, RequestInputType.RequestDetailsQuestion2, cancellationToken),
+                SurveyState.RequestDetailsQuestion4 => HandleSurveyInputRequest(botClient, message, RequestInputType.RequestDetailsQuestion4, cancellationToken),
                 SurveyState.RequestName => HandleSurveyInputRequest(botClient, message, RequestInputType.RequestName, cancellationToken),
                 SurveyState.RequestEmail => HandleSurveyInputRequest(botClient, message, RequestInputType.RequestEmail, cancellationToken),
+                SurveyState.RequestPhone => HandleSurveyInputRequest(botClient, message, RequestInputType.RequestPhone, cancellationToken),
                 _ => throw new NotImplementedException(nameof(SurveyState))
             };
 
@@ -92,6 +96,7 @@ namespace Sandbox.TelegramBot.Core.Services
             {
                 RequestInputType.RequestName => "Ваше имя?",
                 RequestInputType.RequestEmail => "Ваш эмейл?",
+                RequestInputType.RequestPhone => "Ваш телефон?",
                 _ => "Введите:"
             };
 

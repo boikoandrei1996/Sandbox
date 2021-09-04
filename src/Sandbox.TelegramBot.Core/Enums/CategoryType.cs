@@ -4,6 +4,7 @@
     {
         Golubika,
         Klukva,
-        Brusnika
+        Brusnika,
+        Zhimolosti
     }
 }

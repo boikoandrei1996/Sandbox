@@ -11,7 +11,7 @@
         public string Name { get; init; } = null!;
         public string Age { get; init; } = null!;
         public string Price { get; init; } = null!;
-        public string DetailsUrl { get; init; } = null!;
+        public string RedirectUrl { get; init; } = null!;
         public string FileUrl { get; set; } = null!;
     }
 }

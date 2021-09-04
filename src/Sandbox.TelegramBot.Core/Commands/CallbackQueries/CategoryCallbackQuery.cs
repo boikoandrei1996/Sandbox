@@ -39,6 +39,11 @@ namespace Sandbox.TelegramBot.Core.Commands.CallbackQueries
                 case CategoryType.Golubika:
                     await GolubikaCategory(botClient, callbackQuery.Message, cancellationToken);
                     break;
+                case CategoryType.Brusnika:
+                case CategoryType.Klukva:
+                case CategoryType.Zhimolosti:
+                    await EmptyCategory(botClient, callbackQuery.Message, cancellationToken);
+                    break;
                 default:
                     await NotFoundCategory(botClient, callbackQuery.Message, cancellationToken);
                     break;
@@ -47,7 +52,8 @@ namespace Sandbox.TelegramBot.Core.Commands.CallbackQueries
 
         private async Task GolubikaCategory(ITelegramBotClient botClient, Message message, CancellationToken cancellationToken)
         {
-            foreach (var item in DataHelper.CatalogCategories[CategoryType.Golubika].Items)
+            var items = DataHelper.CatalogCategories[CategoryType.Golubika].Items;
+            foreach (var item in items)
             {
                 /*await botClient.SendCachedPhotoAsync(
                     _documentIdCache,
@@ -64,24 +70,39 @@ namespace Sandbox.TelegramBot.Core.Commands.CallbackQueries
                     item.FileUrl,
                     caption: $"<b>Сорт:</b> {item.Name}\n<b>Возраст:</b> {item.Age}\n<b>Цена:</b> {item.Price}",
                     parseMode: ParseMode.Html,
-                    replyMarkup: BuildDetailsKeyboard(item.DetailsUrl),
+                    replyMarkup: BuildRedirectKeyboard(item.RedirectUrl),
                     cancellationToken: cancellationToken
                 );
             }
         }
 
-        private async Task NotFoundCategory(ITelegramBotClient botClient, Message message, CancellationToken cancellationToken)
+        private async Task EmptyCategory(ITelegramBotClient botClient, Message message, CancellationToken cancellationToken)
         {
+            var keyboard = KeyboardHelper.GetCatalogCategoriesKeyboard();
+
             await botClient.SendTextMessageAsync(
                 message.Chat,
-                "Категория не найдена. Попробуйте ещё раз.",
+                "Все товары данной категории распроданы. Попробуйте другую категорию.",
+                replyMarkup: keyboard,
                 cancellationToken: cancellationToken
             );
         }
 
-        private InlineKeyboardMarkup BuildDetailsKeyboard(string url)
+        private async Task NotFoundCategory(ITelegramBotClient botClient, Message message, CancellationToken cancellationToken)
         {
-            return new InlineKeyboardMarkup(InlineKeyboardButton.WithUrl("Подробнее", url));
+            var keyboard = KeyboardHelper.GetCatalogCategoriesKeyboard();
+
+            await botClient.SendTextMessageAsync(
+                message.Chat,
+                "Категория не найдена. Попробуйте  другую категорию.",
+                replyMarkup: keyboard,
+                cancellationToken: cancellationToken
+            );
+        }
+
+        private InlineKeyboardMarkup BuildRedirectKeyboard(string url)
+        {
+            return new InlineKeyboardMarkup(InlineKeyboardButton.WithUrl("Заказать", url));
         }
     }
 }

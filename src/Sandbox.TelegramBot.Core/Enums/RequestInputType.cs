@@ -4,7 +4,9 @@
     {
         RequestDetailsQuestion1,
         RequestDetailsQuestion2,
+        RequestDetailsQuestion4,
         RequestName,
-        RequestEmail
+        RequestEmail,
+        RequestPhone
     }
 }

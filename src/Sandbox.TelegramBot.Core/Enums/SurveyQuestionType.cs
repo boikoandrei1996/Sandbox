@@ -3,6 +3,8 @@
     internal enum SurveyQuestionType
     {
         Question1,
-        Question2
+        Question2,
+        Question3,
+        Question4
     }
 }
