@@ -20,6 +20,8 @@
     - send to CRM 
 - add validation for name, email, phone, custom answer option is required
 - multi-option question
+- fill in other golubika types
+- think of adding filtration by the age and type (invitro or not)
 
 #### Useful links:
 - Telegram Bot documentation
